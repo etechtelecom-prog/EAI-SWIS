@@ -1,0 +1,21 @@
+{
+  "name": "eai-swis-enterprise",
+  "version": "1.0.0",
+  "description": "EAI Smart Waste Intelligence System for Nakhon Ratchasima Province",
+  "main": "electron/main.js",
+  "scripts": {
+    "web": "npx serve .",
+    "desktop": "electron .",
+    "server": "node server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run desktop\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^35.0.0"
+  }
+}

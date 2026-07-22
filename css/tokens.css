@@ -1,0 +1,30 @@
+:root{
+  --korat-green-950:#0b3d1e;
+  --korat-green-900:#14532d;
+  --korat-green-800:#166534;
+  --korat-green-700:#15803d;
+  --korat-orange:#d97706;
+  --korat-orange-soft:#fff2dd;
+  --gold:#d4a017;
+  --navy:#123047;
+  --blue:#1976d2;
+  --purple:#6d4bb5;
+  --success:#2f855a;
+  --warning:#f59e0b;
+  --danger:#dc2626;
+  --ink:#17212b;
+  --muted:#667085;
+  --line:#dde4ea;
+  --surface:#ffffff;
+  --surface-soft:#f5f7f8;
+  --shadow:0 12px 32px rgba(20,83,45,.12);
+  --radius:18px;
+  --sidebar-width:286px;
+  --topbar-height:70px;
+  --mobile-nav-height:72px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:"Noto Sans Thai","Tahoma","Segoe UI",sans-serif;color:var(--ink);background:var(--surface-soft)}
+button,select,input{font:inherit}
+button{cursor:pointer}
+small{display:block}
