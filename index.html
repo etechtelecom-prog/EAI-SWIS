@@ -3,254 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#071a15">
-  <meta name="description" content="EAI Platform Phase 2 - Enterprise Geospatial Intelligence Platform">
-  <title>EAI Platform | Enterprise Geospatial Intelligence</title>
+  <meta name="theme-color" content="#14532d">
+  <meta name="description" content="EAI Smart Waste Intelligence System - Nakhon Ratchasima Province">
+  <title>EAI-SWIS | ระบบอัจฉริยะเพื่อการจัดการขยะเชิงพื้นที่</title>
 
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="./css/phase2.css">
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body>
-<div class="app-shell">
-  <aside class="sidebar" id="sidebar">
-    <div class="brand">
-      <div class="brand-mark">EAI</div>
-      <div>
-        <strong>EAI PLATFORM</strong>
-        <span>Enterprise Geospatial Intelligence</span>
-      </div>
-    </div>
-
-    <div class="platform-badge">
-      <span class="pulse-dot"></span>
-      Phase 2 · Unified Intelligence
-    </div>
-
-    <nav class="nav">
-      <p class="nav-section">PLATFORM COMMAND</p>
-      <button class="nav-item active"><span>◫</span><b>Enterprise Overview</b><small>Command Center</small></button>
-      <button class="nav-item"><span>◎</span><b>Geospatial Operations</b><small>GIS Workspace</small></button>
-      <button class="nav-item"><span>◇</span><b>Digital Twin</b><small>Spatial Simulation</small></button>
-
-      <p class="nav-section">INTELLIGENCE MODULES</p>
-      <button class="nav-item module waste"><span>♻</span><b>Smart Waste</b><small>Waste Intelligence</small></button>
-      <button class="nav-item module disaster"><span>⚠</span><b>Disaster</b><small>Disaster Intelligence</small></button>
-      <button class="nav-item module environment"><span>♧</span><b>Environmental</b><small>Environmental Intelligence</small></button>
-      <button class="nav-item module climate"><span>☁</span><b>Climate</b><small>Climate Intelligence</small></button>
-      <button class="nav-item module water"><span>≈</span><b>Water</b><small>Water Intelligence</small></button>
-      <button class="nav-item module air"><span>≋</span><b>Air Quality</b><small>Air Quality Intelligence</small></button>
-      <button class="nav-item module coastal"><span>⌁</span><b>Coastal</b><small>Coastal Intelligence</small></button>
-      <button class="nav-item module infrastructure"><span>▦</span><b>Infrastructure</b><small>Infrastructure Intelligence</small></button>
-      <button class="nav-item module iot"><span>⌁</span><b>IoT</b><small>Sensor Intelligence</small></button>
-      <button class="nav-item module ai"><span>✦</span><b>AI Decision Support</b><small>Cross-domain Intelligence</small></button>
-    </nav>
-
-    <div class="sidebar-footer">
-      <div class="avatar">AC</div>
-      <div><b>Dr. Apichat Choomkong</b><small>Platform Administrator</small></div>
-    </div>
-  </aside>
-
-  <header class="topbar">
-    <div class="topbar-left">
-      <button id="menuButton" class="icon-button" aria-label="เปิดเมนู">☰</button>
-      <div class="title-block">
-        <b>Enterprise GIS Platform</b>
-        <span>EAI Unified Geospatial Command Center</span>
-      </div>
-      <span class="version-badge">v1.0.0 Alpha</span>
-    </div>
-
-    <div class="system-status">
-      <div class="status-item"><i class="ok"></i><span>API</span><b>Online</b></div>
-      <div class="status-item"><i class="ok"></i><span>Database</span><b>PostGIS Ready</b></div>
-      <div class="status-item"><i class="sync"></i><span>Sync</span><b id="syncText">12 sec ago</b></div>
-      <button class="user-control">
-        <span class="user-avatar">AC</span>
-        <span><b>Administrator</b><small>Enterprise User</small></span>
-        <em>⌄</em>
-      </button>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <section class="hero">
-      <div class="hero-grid"></div>
-      <div class="satellite-orbit orbit-one"></div>
-      <div class="satellite-orbit orbit-two"></div>
-      <div class="hero-copy">
-        <div class="eyebrow"><span></span>EAI PLATFORM · PHASE 2</div>
-        <h1>Enterprise Geospatial<br><mark>Intelligence Platform</mark></h1>
-        <p>Unified GIS, Digital Twin, AI, Satellite, IoT and Decision Support for multi-domain operational intelligence.</p>
-        <div class="hero-tags">
-          <span>GIS Grid</span><span>Digital Twin</span><span>AI</span><span>Satellite</span><span>Waste Intelligence</span>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-symbol">♻</div>
+        <div>
+          <strong>EAI-SWIS</strong>
+          <span>EAI Smart Waste Intelligence System</span>
         </div>
       </div>
 
-      <div class="architecture-orbit">
-        <div class="arch-center"><b>GIS</b><small>Spatial Core</small></div>
-        <div class="arch-node n1">Satellite</div>
-        <div class="arch-node n2">AI</div>
-        <div class="arch-node n3">API</div>
-        <div class="arch-node n4">PostGIS</div>
-        <div class="arch-node n5">Mobile</div>
-        <div class="arch-node n6">IoT</div>
-        <svg viewBox="0 0 420 280" aria-hidden="true">
-          <line x1="210" y1="140" x2="210" y2="30"/>
-          <line x1="210" y1="140" x2="350" y2="70"/>
-          <line x1="210" y1="140" x2="350" y2="215"/>
-          <line x1="210" y1="140" x2="210" y2="255"/>
-          <line x1="210" y1="140" x2="65" y2="215"/>
-          <line x1="210" y1="140" x2="65" y2="70"/>
-        </svg>
+      <nav class="sidebar-nav" aria-label="เมนูหลัก">
+        <p class="nav-section"><span>ศูนย์ควบคุม</span><small>Command Center</small></p>
+        <button class="nav-item active" data-view="overview">
+          <span class="nav-icon">▦</span>
+          <span class="nav-copy"><b>ภาพรวมระบบ</b><small>System Overview</small></span>
+        </button>
+        <button class="nav-item" data-view="map">
+          <span class="nav-icon">🗺</span>
+          <span class="nav-copy"><b>แผนที่เชิงพื้นที่</b><small>Spatial Map</small></span>
+        </button>
+        <button class="nav-item" data-view="cluster">
+          <span class="nav-icon">⬡</span>
+          <span class="nav-copy"><b>จัดการ 36 คลัสเตอร์</b><small>36 Cluster Manager</small></span>
+        </button>
+
+        <p class="nav-section"><span>การปฏิบัติงาน</span><small>Waste Operations</small></p>
+        <button class="nav-item" data-view="source">
+          <span class="nav-icon">♻</span>
+          <span class="nav-copy"><b>แหล่งกำเนิดขยะ</b><small>Waste Sources</small></span>
+        </button>
+        <button class="nav-item" data-view="bin">
+          <span class="nav-icon">🗑</span>
+          <span class="nav-copy"><b>ถังและจุดรวบรวม</b><small>Bins & Collection Points</small></span>
+        </button>
+        <button class="nav-item" data-view="fleet">
+          <span class="nav-icon">🚛</span>
+          <span class="nav-copy"><b>รถและระบบ GPS</b><small>Fleet & GPS</small></span>
+        </button>
+        <button class="nav-item" data-view="route">
+          <span class="nav-icon">↝</span>
+          <span class="nav-copy"><b>เส้นทางเก็บขยะ</b><small>Collection Routes</small></span>
+        </button>
+
+        <p class="nav-section"><span>ระบบอัจฉริยะ</span><small>Intelligence</small></p>
+        <button class="nav-item" data-view="decision">
+          <span class="nav-icon">🧠</span>
+          <span class="nav-copy"><b>ระบบสนับสนุนการตัดสินใจ</b><small>Decision Intelligence</small></span>
+          <span class="nav-badge">3</span>
+        </button>
+        <button class="nav-item" data-view="alert">
+          <span class="nav-icon">⚠</span>
+          <span class="nav-copy"><b>ศูนย์แจ้งเตือน</b><small>Alert Center</small></span>
+          <span class="nav-badge danger">15</span>
+        </button>
+        <button class="nav-item" data-view="report">
+          <span class="nav-icon">▤</span>
+          <span class="nav-copy"><b>รายงานอัตโนมัติ</b><small>Automated Reports</small></span>
+        </button>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="user-avatar">EAI</div>
+        <div><b>ศูนย์ควบคุมจังหวัด</b><small>Provincial Command Center</small></div>
       </div>
-    </section>
+    </aside>
 
-    <section class="kpi-grid">
-      <article class="kpi-card green">
-        <div class="kpi-top"><span class="kpi-icon">♻</span><div><small>Today's Waste Volume</small><b>ปริมาณขยะวันนี้</b></div><em>↗</em></div>
-        <div class="kpi-value"><strong data-count="1482">0</strong><span>tons/day</span></div>
-        <svg class="sparkline" viewBox="0 0 220 48"><polyline points="0,38 25,34 50,36 75,25 100,29 125,18 150,22 175,10 220,6"/></svg>
-        <div class="trend positive">▲ +5.3% <span>Compared last week</span></div>
-      </article>
+    <header class="topbar">
+      <button class="icon-button menu-button" id="menuButton" aria-label="เปิดเมนู">☰</button>
 
-      <article class="kpi-card blue">
-        <div class="kpi-top"><span class="kpi-icon">▣</span><div><small>Available Fleet</small><b>รถพร้อมปฏิบัติงาน</b></div><em>↗</em></div>
-        <div class="kpi-value"><strong data-count="48">0</strong><span>/ 50 vehicles</span></div>
-        <div class="progress"><i style="--value:96%"></i></div>
-        <div class="trend positive">96% availability <span>Operational readiness</span></div>
-      </article>
+      <div class="topbar-title">
+        <b>ศูนย์บัญชาการการจัดการขยะอัจฉริยะ</b>
+        <small>Korat Smart Waste Command Center</small>
+      </div>
 
-      <article class="kpi-card amber">
-        <div class="kpi-top"><span class="kpi-icon">⚠</span><div><small>Critical Hotspots</small><b>จุดเฝ้าระวังเร่งด่วน</b></div><em>↘</em></div>
-        <div class="kpi-value"><strong data-count="15">0</strong><span>locations</span></div>
-        <svg class="sparkline" viewBox="0 0 220 48"><polyline points="0,9 25,14 50,12 75,22 100,18 125,29 150,25 175,35 220,39"/></svg>
-        <div class="trend negative">▼ -2 locations <span>Compared yesterday</span></div>
-      </article>
+      <div class="topbar-actions">
+        <label class="area-control">
+          <span>พื้นที่</span>
+          <small>Area</small>
+          <select id="areaSelect">
+            <option>จังหวัดนครราชสีมา</option>
+            <option>ภาพรวมประเทศไทย</option>
+          </select>
+        </label>
+        <div class="status-pill"><i></i><span>ระบบออนไลน์</span><small>API Online</small></div>
+        <button class="icon-button" title="การแจ้งเตือน">🔔</button>
+      </div>
+    </header>
 
-      <article class="kpi-card violet">
-        <div class="kpi-top"><span class="kpi-icon">✓</span><div><small>SLA Completion</small><b>งานสำเร็จตาม SLA</b></div><em>↗</em></div>
-        <div class="kpi-value"><strong data-count="92">0</strong><span>%</span></div>
-        <div class="progress"><i style="--value:92%"></i></div>
-        <div class="trend positive">▲ +2.1% <span>Compared last month</span></div>
-      </article>
-    </section>
+    <main class="main-content">
+      <section class="hero-banner">
+        <div class="hero-pattern"></div>
 
-    <section class="main-grid">
-      <article class="panel map-panel">
-        <div class="panel-heading">
-          <div><span class="panel-kicker">GEOSPATIAL CORE</span><h2>Enterprise Situation Map</h2><p>แผนที่สถานการณ์แบบบูรณาการหลายมิติ</p></div>
-          <div class="map-tools">
-            <button id="fitMap">⌖ Fit</button>
-            <button id="refreshMap">↻ Refresh</button>
+        <div class="hero-copy">
+          <span class="hero-kicker">EAI-SWIS</span>
+          <h1>EAI Smart Waste Intelligence System</h1>
+          <h2>ระบบอัจฉริยะเพื่อการจัดการขยะเชิงพื้นที่</h2>
+          <p>Smart Area Waste Management Platform</p>
+          <div class="province-name">
+            <b>จังหวัดนครราชสีมา</b>
+            <span>Nakhon Ratchasima Province</span>
           </div>
         </div>
-        <div id="map"></div>
-        <div class="map-legend">
-          <span><i class="normal"></i>Normal</span>
-          <span><i class="watch"></i>Watch</span>
-          <span><i class="critical"></i>Critical</span>
-          <span><i class="gps"></i>GPS Fleet</span>
-        </div>
-      </article>
 
-      <article class="panel ai-panel">
-        <div class="panel-heading compact">
-          <div><span class="panel-kicker">AI DECISION SUPPORT</span><h2>Cross-domain Recommendation</h2></div>
-          <span class="ai-live"><i></i> AI Live</span>
+        <div class="hero-summary">
+          <div><b>32</b><span>อำเภอ</span><small>Districts</small></div>
+          <div><b>36</b><span>คลัสเตอร์ขยะ</span><small>Waste Clusters</small></div>
+          <div><b>Live</b><span>สถานการณ์</span><small>Situation</small></div>
         </div>
 
-        <div class="ai-priority">
-          <div><small>AI Priority Score</small><strong>87</strong></div>
-          <span>HIGH PRIORITY</span>
+        <div class="agency-mark">
+          <img src="./assets/korat-pao-emblem.png" alt="ตราองค์การบริหารส่วนจังหวัดนครราชสีมา">
+          <div><b>องค์การบริหารส่วนจังหวัดนครราชสีมา</b><small>Nakhon Ratchasima Provincial Administrative Organization</small></div>
         </div>
+      </section>
 
-        <div class="ai-metrics">
-          <div><small>Predicted Overflow</small><b>15.4 t</b><span>within 6 hours</span></div>
-          <div><small>Estimated Collection</small><b>48 min</b><span>ETA optimized</span></div>
-          <div><small>Recommended Vehicle</small><b>KRT-06</b><span>82% capacity</span></div>
-          <div><small>Carbon Saving</small><b>18.7%</b><span>optimized route</span></div>
-        </div>
+      <section class="kpi-grid">
+        <article class="kpi-card success">
+          <div class="kpi-head"><span>ปริมาณขยะวันนี้<small>Today's Waste Volume</small></span><i>♻</i></div>
+          <strong>1,482</strong><em>ตัน/วัน • tons/day</em>
+          <p>▲ 3.8% จากค่าเฉลี่ย 7 วัน</p>
+        </article>
 
-        <div class="route-card">
-          <div><span>Route Optimization</span><b>R-1204 → R-1204B</b></div>
-          <div class="route-line"><i></i><i></i><i></i><i></i></div>
-          <p>ลดระยะทาง 6.8 กม. และลดเวลาปฏิบัติงานประมาณ 22 นาที</p>
-        </div>
+        <article class="kpi-card info">
+          <div class="kpi-head"><span>รถพร้อมปฏิบัติงาน<small>Available Collection Vehicles</small></span><i>🚛</i></div>
+          <strong>48/50</strong><em>คัน • vehicles</em>
+          <p>96% Fleet availability</p>
+        </article>
 
-        <div class="recommendation">
-          <span>✦ AI Recommendation</span>
-          <p>เพิ่มรถ KRT-06 ไปยัง Cluster 12 ภายใน 30 นาที และเปิดเส้นทางสำรองเพื่อหลีกเลี่ยงพื้นที่จราจรหนาแน่น</p>
-        </div>
+        <article class="kpi-card warning">
+          <div class="kpi-head"><span>จุดขยะตกค้าง<small>Uncollected Waste Points</small></span><i>⚠</i></div>
+          <strong>15</strong><em>จุด • locations</em>
+          <p>5 จุดอยู่ในระดับเร่งด่วน</p>
+        </article>
 
-        <div class="ai-actions">
-          <button class="primary">Approve & Assign</button>
-          <button>View Evidence</button>
-        </div>
-      </article>
-    </section>
+        <article class="kpi-card purple">
+          <div class="kpi-head"><span>งานสำเร็จตาม SLA<small>SLA Completion Rate</small></span><i>✓</i></div>
+          <strong>92%</strong><em>ภายในเวลาที่กำหนด</em>
+          <p>▲ 2.1% จากเดือนก่อน</p>
+        </article>
+      </section>
 
-    <section class="dashboard-grid">
-      <article class="panel">
-        <div class="panel-heading compact"><div><span class="panel-kicker">LIVE OPERATIONS</span><h2>Realtime Timeline</h2></div><button class="text-button">View all</button></div>
-        <div class="timeline">
-          <div><i class="critical"></i><time>14:32</time><p><b>Overflow prediction updated</b><span>Cluster 12 · AI confidence 91%</span></p></div>
-          <div><i class="watch"></i><time>14:28</time><p><b>New citizen report received</b><span>Photo + GPS · Mueang District</span></p></div>
-          <div><i class="normal"></i><time>14:21</time><p><b>Vehicle KRT-18 completed route</b><span>SLA completed in 52 minutes</span></p></div>
-          <div><i class="info"></i><time>14:15</time><p><b>Satellite layer synchronized</b><span>Cloud cover 8% · latest scene</span></p></div>
-        </div>
-      </article>
+      <section class="workspace-grid">
+        <article class="map-card panel">
+          <div class="panel-heading map-heading">
+            <div><h3>แผนที่สถานการณ์ขยะจังหวัดนครราชสีมา</h3><p>Korat Waste Situation Map</p></div>
+            <div class="map-actions">
+              <select id="mapLayer">
+                <option value="clusters">36 คลัสเตอร์ • 36 Clusters</option>
+                <option value="fleet">รถเก็บขยะ • Waste Fleet</option>
+                <option value="hotspots">จุดเสี่ยง • Waste Hotspots</option>
+              </select>
+              <label class="upload-button">
+                <span>โหลด GeoJSON</span><small>Load GeoJSON</small>
+                <input type="file" id="geojsonInput" accept=".json,.geojson">
+              </label>
+            </div>
+          </div>
 
-      <article class="panel">
-        <div class="panel-heading compact"><div><span class="panel-kicker">FIELD REPORTS</span><h2>Recent Reports</h2></div><span class="count-badge">24 Today</span></div>
-        <div class="report-list">
-          <div><span class="report-icon red">⚠</span><p><b>Illegal dumping detected</b><small>Pak Chong · 8 min ago</small></p><em>Urgent</em></div>
-          <div><span class="report-icon amber">♻</span><p><b>Bin capacity above 90%</b><small>Sikhio · 14 min ago</small></p><em>Watch</em></div>
-          <div><span class="report-icon green">✓</span><p><b>Collection completed</b><small>Chok Chai · 26 min ago</small></p><em>Closed</em></div>
-          <div><span class="report-icon blue">⌖</span><p><b>GPS route deviation</b><small>Mueang · 31 min ago</small></p><em>Review</em></div>
-        </div>
-      </article>
+          <div id="map"></div>
 
-      <article class="panel">
-        <div class="panel-heading compact"><div><span class="panel-kicker">FIELD EVIDENCE</span><h2>Latest Photos</h2></div><button class="text-button">Gallery</button></div>
-        <div class="photo-grid">
-          <div class="photo p1"><span>Cluster 12<small>14:28</small></span></div>
-          <div class="photo p2"><span>Route R-1204<small>14:10</small></span></div>
-          <div class="photo p3"><span>BIN-204<small>13:52</small></span></div>
-          <div class="photo p4"><span>KRT-18<small>13:30</small></span></div>
-        </div>
-      </article>
+          <div class="map-legend">
+            <span><i class="dot green"></i>ปกติ <small>Normal</small></span>
+            <span><i class="dot amber"></i>เฝ้าระวัง <small>Watch</small></span>
+            <span><i class="dot red"></i>เร่งด่วน <small>Critical</small></span>
+          </div>
+        </article>
 
-      <article class="panel environment-card">
-        <div class="panel-heading compact"><div><span class="panel-kicker">ENVIRONMENTAL CONDITIONS</span><h2>Weather & Air Quality</h2></div><span class="live-tag">LIVE</span></div>
-        <div class="weather-row">
-          <div class="weather-main"><span>☁</span><strong>31°</strong><p>Partly Cloudy<small>Nakhon Ratchasima</small></p></div>
-          <div class="weather-details"><span>Humidity <b>68%</b></span><span>Wind <b>11 km/h</b></span><span>Rain <b>24%</b></span></div>
-        </div>
-        <div class="aq-row">
-          <div class="aq-score"><small>AQI</small><strong>42</strong><span>GOOD</span></div>
-          <div class="aq-bars"><span>PM2.5 <i><b style="width:34%"></b></i><em>14</em></span><span>PM10 <i><b style="width:46%"></b></i><em>28</em></span><span>O₃ <i><b style="width:39%"></b></i><em>19</em></span></div>
-        </div>
-      </article>
-    </section>
+        <aside class="right-stack">
+          <article class="panel decision-panel">
+            <div class="panel-heading">
+              <div><h3>ข้อเสนอจากระบบอัจฉริยะ</h3><p>Waste Decision Intelligence API</p></div>
+              <button class="mini-button" id="recomputeButton"><span>ประมวลผลใหม่</span><small>Recompute</small></button>
+            </div>
 
-    <section class="architecture-panel panel">
-      <div class="panel-heading"><div><span class="panel-kicker">ENTERPRISE ARCHITECTURE</span><h2>EAI Platform Intelligence Fabric</h2><p>Satellite → GIS → AI → API → PostGIS → Decision Support</p></div></div>
-      <div class="architecture-flow">
-        <div><span>◉</span><b>Satellite</b><small>Earth Observation</small></div><i>→</i>
-        <div><span>⌁</span><b>IoT</b><small>Sensor Network</small></div><i>→</i>
-        <div class="core"><span>◎</span><b>GIS</b><small>Spatial Core</small></div><i>→</i>
-        <div><span>✦</span><b>AI</b><small>Intelligence Engine</small></div><i>→</i>
-        <div><span>API</span><b>API Gateway</b><small>Integration Layer</small></div><i>→</i>
-        <div><span>DB</span><b>PostGIS</b><small>Spatial Database</small></div><i>→</i>
-        <div class="decision"><span>✓</span><b>Decision Support</b><small>Operational Action</small></div>
-      </div>
-    </section>
-  </main>
-</div>
+            <div class="decision-priority">
+              <span>ระดับเร่งด่วน<small>High Priority</small></span>
+              <strong id="decisionScore">87</strong>
+            </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="./js/phase2.js"></script>
+            <h4>คลัสเตอร์ 12 เสี่ยงเกิดขยะตกค้าง</h4>
+            <p class="decision-description">
+              ปริมาณขยะสูงกว่าค่าเฉลี่ย 28% และรถพร้อมใช้งานต่ำกว่าความต้องการ
+              ระบบเสนอให้เพิ่มรถ 2 คันและปรับเส้นทาง R-1204 ภายใน 60 นาที
+            </p>
+
+            <div class="evidence-grid">
+              <div><b>15.4</b><span>ตันตกค้าง</span><small>Residual tons</small></div>
+              <div><b>18</b><span>เรื่องร้องเรียน</span><small>Complaints</small></div>
+              <div><b>54%</b><span>งานสำเร็จ</span><small>Completion</small></div>
+            </div>
+
+            <div class="action-grid">
+              <button class="primary-button" id="approveButton"><span>อนุมัติและมอบหมาย</span><small>Approve & Assign</small></button>
+              <button class="secondary-button" id="evidenceButton"><span>ดูหลักฐาน</span><small>View Evidence</small></button>
+            </div>
+
+            <div class="api-line"><code>GET /api/v1/decision/cluster/KRT-12</code><b>200 OK</b></div>
+          </article>
+
+          <article class="panel alert-panel">
+            <div class="panel-heading">
+              <div><h3>เหตุการณ์สำคัญ</h3><p>Priority Alerts</p></div>
+              <button class="mini-button"><span>ดูทั้งหมด</span><small>View All</small></button>
+            </div>
+
+            <div class="alert-list">
+              <div class="alert-item critical"><i></i><div><b>รถ KRT-06 หยุดผิดปกติ</b><small>KRT-06 unusual stop • 24 minutes</small></div><time>2 นาที</time></div>
+              <div class="alert-item warning"><i></i><div><b>ถัง BIN-204 ใกล้เต็ม</b><small>BIN-204 fill level 91%</small></div><time>8 นาที</time></div>
+              <div class="alert-item info"><i></i><div><b>ประชาชนแจ้งขยะตกค้าง</b><small>Citizen report with photo and GPS</small></div><time>15 นาที</time></div>
+            </div>
+          </article>
+        </aside>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel">
+          <div class="panel-heading"><div><h3>แนวโน้มปริมาณขยะ</h3><p>Waste Volume Trend</p></div></div>
+          <div class="simple-chart" aria-label="กราฟแนวโน้มปริมาณขยะ">
+            <div style="--v:62"><span>จ.</span></div>
+            <div style="--v:67"><span>อ.</span></div>
+            <div style="--v:73"><span>พ.</span></div>
+            <div style="--v:69"><span>พฤ.</span></div>
+            <div style="--v:78"><span>ศ.</span></div>
+            <div style="--v:88"><span>ส.</span></div>
+            <div style="--v:82"><span>อา.</span></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading"><div><h3>คำสั่งใช้งานด่วน</h3><p>Quick Operations</p></div></div>
+          <div class="quick-grid">
+            <button><b>＋</b><span>สร้างภารกิจ</span><small>Create Mission</small></button>
+            <button><b>📍</b><span>แจ้งจุดขยะ</span><small>Report Waste</small></button>
+            <button><b>🚛</b><span>จัดสรรรถ</span><small>Assign Vehicle</small></button>
+            <button><b>↝</b><span>คำนวณเส้นทาง</span><small>Calculate Route</small></button>
+            <button><b>▤</b><span>ออกรายงาน</span><small>Generate Report</small></button>
+            <button><b>API</b><span>เปิด API Console</span><small>Open API Console</small></button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="เมนูมือถือ">
+      <button class="active" data-mobile-view="overview"><b>▦</b><span>ภาพรวม</span><small>Overview</small></button>
+      <button data-mobile-view="map"><b>🗺</b><span>แผนที่</span><small>Map</small></button>
+      <button data-mobile-view="report"><b>📍</b><span>แจ้งเหตุ</span><small>Report</small></button>
+      <button data-mobile-view="fleet"><b>🚛</b><span>รถ</span><small>Fleet</small></button>
+      <button id="mobileMenuButton"><b>☰</b><span>เพิ่มเติม</span><small>More</small></button>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>
