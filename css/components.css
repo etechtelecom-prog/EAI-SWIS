@@ -20,9 +20,8 @@
 .hero-summary div{min-width:92px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);border-radius:15px;padding:10px;text-align:center}
 .hero-summary b{display:block;font-size:22px}.hero-summary span{display:block;font-size:10px}.hero-summary small{font-size:8px;color:#dcefe2}
 .agency-mark{position:absolute;right:24px;bottom:18px;z-index:3;display:flex;align-items:center;gap:9px;max-width:330px;text-align:right}
-.agency-mark img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.75);background:#fff}
+.agency-mark img{ width:64px;  height:64px;  border-radius:50%;  object-fit:contain;  object-position:center;  border:2px solid rgba(255,255,255,.85);  background:#fff;  padding:2px;  image-rendering:auto;  filter:drop-shadow(0 3px 8px rgba(0,0,0,.20));}
 .agency-mark b{display:block;font-size:10px}.agency-mark small{font-size:8px;color:#dcefe2}
-
 .kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:15px}
 .kpi-card,.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
 .kpi-card{padding:15px;min-height:125px;border-top:4px solid var(--accent)}
